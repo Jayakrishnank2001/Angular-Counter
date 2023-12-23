@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { customCounter } from '../../state/app.actions';
+import { counterModel } from '../../state/app.model';
 
 @Component({
   selector: 'app-custom-counter',
@@ -9,12 +10,13 @@ import { customCounter } from '../../state/app.actions';
 })
 export class CustomCounterComponent {
 
-  constructor(private store:Store<{counter:number}>){
+  counterName=''
+  constructor(private store:Store<{counter:counterModel}>){
 
   }
 
   counterInput!:number
-  actionType!:string
+  actionType='add'
 
   OnIncrement(){
     this.store.dispatch(customCounter({value:+this.counterInput,action:this.actionType}))

@@ -1,8 +1,11 @@
 <div>
-    <button mat-raised-button color="primary" (click)="increment()">Increment +</button>
-    <button mat-raised-button color="accent" (click)="decrement()">decrement -</button>
-    <button mat-raised-button color="warn" (click)="reset()">reset</button>
-    <h1>counter: {{count$ | async}}</h1>
+    <button mat-raised-button color="primary" (click)="increment()">Increment(+)</button>
+    <button mat-raised-button color="accent" (click)="decrement()">Decrement(-)</button>
+    <button mat-raised-button color="warn" (click)="reset()">Reset</button>
+    <br>
+    <button mat-raised-button color="warn" (click)="rename()">Rename</button>
+    <h1>{{(counter$ | async)?.counterName}}</h1>
+    <h1>counter: {{(counter$ | async)?.counter}}</h1>
 </div>
 
 
